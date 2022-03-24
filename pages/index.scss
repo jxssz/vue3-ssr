@@ -1,0 +1,24 @@
+
+.main-scroll {
+  height: calc(100vh);
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  .main {
+  }
+  .footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    a {
+      // display: inline-block;
+      &:hover {
+        border-bottom: 1px solid rgb(189, 189, 189);
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.home-page-main {
+  h3 {
+    cursor: pointer;
+
+    &:hover {
+      color: rgb(0, 133, 0);
+    }
+  }
+
+  .more {
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+  }
+}
