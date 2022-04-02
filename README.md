@@ -1,4 +1,4 @@
-  强迫症，不喜欢用以开源的ssr框架，封装的东西太多了！！！
+  
 
 1 借助：vite-plugin-ssr https://vite-plugin-ssr.com/
 
