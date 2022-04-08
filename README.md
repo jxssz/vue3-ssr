@@ -1,5 +1,5 @@
 
-![图片](./blob/master/public/demo.png)
+![图片](https://github.com/jxssz/vue3-ssr/blob/master/public/demo.png)
 
 ## 预渲染
 *.page.server.js
