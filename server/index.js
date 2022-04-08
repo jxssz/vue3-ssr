@@ -1,5 +1,4 @@
 const express = require('express')
-const compression = require('compression')
 const { createPageRenderer } = require('vite-plugin-ssr')
 
 const isProduction = process.env.NODE_ENV === 'production'
@@ -9,8 +8,6 @@ startServer()
 
 async function startServer() {
   const app = express()
-
-  app.use(compression())
 
   let viteDevServer
   if (isProduction) {
@@ -26,10 +23,10 @@ async function startServer() {
 
   const renderPage = createPageRenderer({ viteDevServer, isProduction, root })
   app.get('*', async (req, res, next) => {
+    // json文件不能缓存，这里可以做个过滤
+    res.setHeader('Cache-Control', 'max-age=0');
     const url = req.originalUrl
-    const pageContextInit = {
-      url,
-    }
+    const pageContextInit = { url }
     const pageContext = await renderPage(pageContextInit)
     const { httpResponse } = pageContext
     if (!httpResponse) return next()

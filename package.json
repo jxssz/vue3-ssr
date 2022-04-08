@@ -1,4 +1,12 @@
 {
+  "name": "ssr",
+  "version": "1.0.0",
+  "description": "ssr",
+  "author": {
+    "name": "皮皮虾",
+    "url": "https://www.jxihub.cn",
+    "email": "jxihub@gmail.com"
+  },
   "scripts": {
     "dev": "npm run server",
     "prod": "npm run build && npm run server:prod",
@@ -11,19 +19,12 @@
   "devDependencies": {
     "@css-render/vue3-ssr": "^0.15.9",
     "@vitejs/plugin-vue": "^2.2.2",
-    "@vue/compiler-sfc": "^3.2.31",
     "@vue/server-renderer": "^3.2.31",
-    "axios": "^0.26.1",
-    "compression": "^1.7.4",
     "cross-env": "^7.0.3",
     "express": "^4.17.3",
-    "naive-ui": "^2.26.4",
-    "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.49.9",
-    "unplugin-vue-components": "^0.18.0",
-    "vfonts": "^0.0.3",
-    "vite": "^2.8.4",
-    "vite-plugin-ssr": "^0.3.60",
+    "vite": "2.8.4",
+    "vite-plugin-ssr": "^0.3.61",
     "vue": "^3.2.31"
   }
 }

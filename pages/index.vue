@@ -1,69 +1,64 @@
 <template>
-  <div class="main-scroll">
-    <!-- <n-menu v-model:value="activeKey" mode="horizontal" :options="menuOptions" /> -->
-    <div class="main">
-      <n-config-provider :locale="zhCN" :date-locale="dateZhCN">
-        <slot />
-        <n-back-top right="40px" bottom="100px" />
-      </n-config-provider>
+  <div class="main">
+    <div class="header">
+      <h1>服务端渲染</h1>
     </div>
+    <div class="content">
+      <a href="/">首页</a>
+      |
+      <a href="/seo">SEO</a>
+      |
+      <a href="/route">路由</a>
+      |
+      <a href="/param/1">传参</a>
+    </div>
+    <slot />
     <div class="footer">
-      <span>仅供学习参考，一切数据均来自网络</span>
       <div>
-        <a href="https://v3.cn.vuejs.org/" target="_block">Vue</a>&nbsp;
-        <a href="https://cn.vitejs.dev/" target="_block">Vite</a>&nbsp;
-        <a href="https://vite-plugin-ssr.com/" target="_block">vite-plugin-ssr</a>&nbsp;
-        <a href="https://gitee.com/jxssz/prawns-love-learning" target="_block">源码</a>
+        <a href="https://v3.cn.vuejs.org/" target="_block">vue</a>
+        |
+        <a href="https://vitejs.cn/" target="_block">vite</a>
+        |
+        <a href="https://vite-plugin-ssr.com" target="_block">vite-plugin-ssr</a>
       </div>
-      <span>粤ICP备2021062248号</span>
+      <h6>学习交流</h6>
     </div>
   </div>
 </template>
 <script setup>
-import { zhCN, dateZhCN } from 'naive-ui'
-import { defineComponent } from 'vue'
-const activeKey = null
-const menuOptions = [
-  {
-    label: '1973年的弹珠玩具',
-    key: 'pinball-1973'
-  }
-]
-// export default defineComponent({
-//   components: {
-//     zhCN,
-//     dateZhCN
-//   },
-//   setup() {
-//     return {
-//       zhCN,
-//       dateZhCN
-//     }
-//   }
-// })
 </script>
 <style lang="scss" scoped>
-.main-scroll {
-  width: 100%;
-  // height: calc(100vh);
-  // overflow: scroll;
-  &::-webkit-scrollbar {
-    display: none;
+.main {
+  position: relative;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  align-items: center;
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    width: 100%;
+    height: 35vh;
+    background-color: rgb(101, 184, 0);
+    h1 {
+      color: #fff;
+      letter-spacing: 20px;
+    }
   }
-  .main {
+  .content {
+    margin-top: 2vh;
+    a {
+      color: #ccc;
+    }
   }
   .footer {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
+    position: absolute;
+    bottom: 20px;
+    text-align: center;
     a {
-      // display: inline-block;
-      &:hover {
-        border-bottom: 1px solid rgb(189, 189, 189);
-      }
+      color: #ccc;
     }
   }
 }
